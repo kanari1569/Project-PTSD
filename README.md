@@ -99,8 +99,10 @@
 
 # DATABASE 
 
-### 미디어 DB
+### ERD
+![ERD 전체](https://github.com/user-attachments/assets/ed3e1d2a-6af7-4629-bddd-c20c19dde29e)
 
+<!--
 + #### 미디어 DB ERD 1
 ![미디어 서버 DB 1](https://github.com/user-attachments/assets/c4d8dea8-b6f2-47b6-94a2-a1e19a4aee3c)
 
@@ -116,27 +118,28 @@
 + #### 미디어 DB ERD 5
 ![미디어 서버 DB 5](https://github.com/user-attachments/assets/693ed63a-0c85-45ca-b346-9e4ef98c028b)
 
----
+
 
 ### 사용자 DB
 
 + #### 사용자 DB ERD
 ![사용자 DB](https://github.com/user-attachments/assets/6ea57bca-1b7e-4a92-8775-9050bec759e1)
 
----
+
 
 ### AIM DB (Amazon Instacne Manager)
 
 + #### AIM DB ERD
 ![AIM DB](https://github.com/user-attachments/assets/ab8278e0-bc25-43a7-b8fa-8fc2395c290d)
 
----
+
 
 ### URL DB
 
 + #### URL DB ERD
 ![URL DB](https://github.com/user-attachments/assets/d91e462c-6913-476f-b56f-e31cc9e7e0e9)
 
+-->
 ---
 
 # 서비스 아키텍처
