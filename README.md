@@ -179,7 +179,8 @@
   </br>
 
   + #### 아키텍처 2
-    + Ec2 Instance들은 Worker Node로 사용이되는데 이를 관리하기 위해 별도의 Manager Node를 두었습니다. Mnager Node와 Worker node들은 docker swarm netwrk로 연결되어있고 각 서비스들이 배포되어있습니다.
+    + Ec2 Instance들은 Worker Node로 사용이되는데 이를 관리하기 위해 별도의 Manager Node를 두었습니다.
+    +  Mnager Node와 Worker node들은 docker swarm netwrk로 연결되어있고 각 서비스들이 배포되어있습니다.
     + worker node가 스케일 아웃되면 해당 node에 서비스를 배포해줘야하는데 해당 기능을 수행하기 위해 node manager service를 도입하였습니다.
   
   ![도커스웜2](https://github.com/user-attachments/assets/432249a9-1ec0-48b8-a84d-e2250656d238)
