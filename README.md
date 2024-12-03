@@ -71,7 +71,13 @@
     <img src="https://github.com/user-attachments/assets/de93371b-5209-436b-8b74-f6b1bf9e48e2" width="800" height="400"/>
     </br>
     </br>
-
+  + 마이페이지
+    + 해당 페이지에서 사용자의 정보변경이 가능합니다.
+    </br>
+    <img src="https://github.com/user-attachments/assets/a3083247-f858-4d2b-ba18-28dfaeb321c5" width="800" height="400"/>
+    </br>
+    </br>
+---
 
 # DATABASE 
 
@@ -101,8 +107,21 @@
 
 ---
 
+### AIM DB (Amazon Instacne Manager)
 
++ #### AIM DB ERD
+![AIM DB](https://github.com/user-attachments/assets/ab8278e0-bc25-43a7-b8fa-8fc2395c290d)
 
+---
+
+### URL DB
+
++ #### URL DB ERD
+![URL DB](https://github.com/user-attachments/assets/d91e462c-6913-476f-b56f-e31cc9e7e0e9)
+
+---
+
+# 시스템 아키텍처
 
 
 		
