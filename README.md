@@ -13,7 +13,7 @@
 + ## 기획 배경
      영상을 저장하고, 친구들과 공유할 수 있는 개인 서버를 갖고 싶지만 서버를 구축하는데 어려움이 있는 사용자를 대상으로 미디어 서버를 제공해주는 플랫폼을 만들기로 결정
 + ## 수행 목표
-     사용자로부터 구독 요청이 들어오면 AWS로부터 EC2와 S3를 생성하여 미디어 서버를 생성해준다. 미디어 서버는 영상 업로드와 스트리밍 기능 및 동영상 공유 서비스를 제공합니다.
+     사용자로부터 구독 요청이 들어오면 AWS로부터 EC2와 S3를 생성하여 미디어 서버를 생성해줍니다. 미디어 서버는 영상 업로드와 스트리밍 기능 및 동영상 공유 서비스를 제공합니다.
 
 ---
 
@@ -43,65 +43,68 @@
 ---
 # 화면 구성
 
-  + 메인화면
-    + subscribe 버튼 클릭 시 subscribe 페이지로 이동
-    + PTSD 버튼 클릭 시 초기화면으로 이동
-    + login 버튼 클릭 시 login Modal 팝업
+  + 메인 화면
     </br>
-    <img src="https://github.com/user-attachments/assets/43aab1b0-2881-4ef6-9463-6df79e556c1c" width="300" height="400"/>
+    <img src="https://github.com/user-attachments/assets/43aab1b0-2881-4ef6-9463-6df79e556c1c" width="500" height="600"/>
+    </br>
+    </br>
+  + 로그인 화면
+    + 사용자는 Google, KAKAO 두 가지 플랫폼으로 소셜 로그인이 가능합니다.
+    </br>
+    <img src="https://github.com/user-attachments/assets/35ef0095-abae-4c7f-bf9a-b9a1abfdbe26" width="800" height="400"/>
+    </br>
+    </br>
+  + 구독 화면
+    </br>
+    <img src="https://github.com/user-attachments/assets/ca4cf137-2fea-4713-b705-e6ee35351737" width="500" height="600"/>
+    </br>
+    </br>
+  + 할당된 서버 화면
+    + 사용자는 해당 페이지에서 동영상 업로드, 다운 서비스를 제공받습니다.
+    </br>
+    <img src="https://github.com/user-attachments/assets/fad13936-da0a-4c5e-98a3-4f7087b048e5" width="800" height="400"/>
+    </br>
+    </br>
+  + 미디어 재생 페이지
+    + 사용자는 해당 페이지에서 Short URL을 통해 동영상 공유 링크 서비스를 제공받습니다.
+    </br>
+    <img src="https://github.com/user-attachments/assets/de93371b-5209-436b-8b74-f6b1bf9e48e2" width="800" height="400"/>
+    </br>
+    </br>
+
+
+# DATABASE 
+
+### 미디어 DB
+
++ #### 미디어 DB ERD 1
+![미디어 서버 DB 1](https://github.com/user-attachments/assets/c4d8dea8-b6f2-47b6-94a2-a1e19a4aee3c)
+
++ #### 미디어 DB ERD 2
+![미디어 서버 DB 2](https://github.com/user-attachments/assets/32240ce5-60c4-4c63-a7d5-f825a597b2f3)
+
++ #### 미디어 DB ERD 3
+![미디어 서버 DB 3](https://github.com/user-attachments/assets/874f2011-44db-445d-bcea-b63e58f26710)
+
++ #### 미디어 DB ERD 4
+![미디어 서버 DB 4](https://github.com/user-attachments/assets/04d3bf21-67ba-4075-a3d0-b0a591cf0603)
+
++ #### 미디어 DB ERD 5
+![미디어 서버 DB 5](https://github.com/user-attachments/assets/693ed63a-0c85-45ca-b346-9e4ef98c028b)
+
+---
+
+### 사용자 DB
+
++ #### 사용자 DB ERD
+![사용자 DB](https://github.com/user-attachments/assets/6ea57bca-1b7e-4a92-8775-9050bec759e1)
+
+---
 
 
 
-<img src="https://github.com/user-attachments/assets/6a03b052-0aba-481c-9343-906fe0ef4399" align="right">
 
 
-
-## 2. UI
-
-+ 로그인 화면
-
-  <img src="https://github.com/user-attachments/assets/8818b99e-2b74-4e59-a7f2-c7cc4f22c394" width="800" height="400"/>
-
-+ 회원가입 화면
-
-  <img src="https://github.com/user-attachments/assets/ce1386f9-bc35-4766-815a-13b77ad39f76" width="800" height="400"/>
-
-
-+ 메인 화면
-
-  <img src="https://github.com/user-attachments/assets/77ad41c5-ff67-4465-a1d6-84e42b47c204" width="800" height="400"/>
-
-
-+ 글 작성 화면
-  + 인원수, 배달 여부, 음식 종류를 선택하여 게시글을 작성할 수 있습니다.
-  </br>
-  <img src="https://github.com/user-attachments/assets/a8ca64d6-0404-41f6-86a4-06fd9f58a0ad" width="400" height="600"/>
-
-
-+ 게시글 보기 화면
-  + 작성자 이외의 회원이 글을 볼 경우 참여 아이콘이 활성화됩니다.
-  </br>
-  <img src="https://github.com/user-attachments/assets/1a8b8316-e6aa-42c0-8f7c-bd42d1958b6f" width="400" height="600"/>
-
-
-+ 참여 아이콘 활성화 화면
-  + 활성화된 참여 아이콘을 클릭하면 사용자의 아이디가 목록에 추가됩니다.
-  </br>
-   <img src="https://github.com/user-attachments/assets/e98df3cb-a331-465f-ac66-f4054eee8cca" width="400" height="600"/>
-
-
-## 시스템 아키텍처
-![시스템 아키텍처 JPG](https://github.com/user-attachments/assets/3a6fc9b5-bce6-43c4-a3e5-e7bc9688b1df)
-
-## 업무 분장
-#### FRONTEND
-     김태민, 최현지 - 각종 페이지 UI 설계 및 구현
-#### 회원, 로그인
-     김준연, 이상현 - 회원 정보관리, JWT 토큰을 활용한 인증 및 예외처리 기능 구현
-#### 게시글 CRUD
-     김연수, 김종민 - 기본적인 게시글의 CRUD, 게시글 끌올, 참여 기능 구현
-#### 배포
-     김연수, 이상현 - GitAction을 사용한 무중단 배포 기능 구현
 		
 		
 
