@@ -1,0 +1,136 @@
+spring:
+  config:
+    activate:
+      on-profile: prod
+  datasource:
+    url: jdbc:mariadb://${DB_IP}:3306/ptsd?useUnicode=true&characterEncoding=utf-8
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: ${DB_USER}
+    password: ${DB_PW}
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    properties: # property 사용 설정
+      hibernate: # hibernate property 설정
+        format_sql: true
+  cloud:
+    gateway:
+      default-filters:
+        - name: GlobalFilter
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: '*'
+            allow-credentials: false
+            allowedHeaders: '*'
+            allowedMethods:
+              - PUT
+              - GET
+              - POST
+              - DELETE
+              - OPTIONS
+      routes:
+        - id: ptsd-auth
+          uri: http://auth-server:8080
+          predicates:
+            - Path=/api/v1/auth/**
+        - id: ptsd-user
+          uri: http://auth-server:8080
+          predicates:
+            - Path=/api/v1/users/**
+          filters:
+            - JwtAuthenticationFilter
+        - id: ptsd-short-url
+          uri: http://ly:8080
+          predicates:
+            - Method= POST, PUT, DELETE
+            - Path=/api/v1/urls/**
+          filters:
+            - UrlFilter
+        - id: ptsd-short-url2
+          uri: http://ly:8080
+          predicates:
+            - Method= GET
+            - Path=/api/v1/urls/**
+        - id: ptsd-aim-server
+          uri: http://aws-instance-manager:8080
+          predicates:
+            - Path=/api/v1/aim/instances/**
+          filters:
+            - AimJwtFilter
+
+AuthURL:
+  url: http://auth-server:8080/api/v1/auth/access_token_info
+
+server:
+  port: 8000
+---
+
+spring:
+  config:
+    activate:
+      on-profile: local
+  datasource:
+    url: jdbc:mariadb://localhost:3306/test?useUnicode=true&characterEncoding=utf-8
+    driver-class-name: org.mariadb.jdbc.Driver
+    username: root
+    password: 1234
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties: # property 사용 설정
+      hibernate: # hibernate property 설정
+        format_sql: true
+  cloud:
+    gateway:
+      default-filters:
+        - name: GlobalFilter
+        - DedupeResponseHeader=Access-Control-Allow-Origin Access-Control-Allow-Credentials
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: '*'
+            allow-credentials: false
+            allowedHeaders: '*'
+            allowedMethods:
+              - PUT
+              - GET
+              - POST
+              - DELETE
+              - OPTIONS
+      routes:
+        - id: ptsd-auth
+          uri: http://localhost:8080/
+          predicates:
+            - Path=/api/v1/auth/**
+        - id: ptsd-user
+          uri: http://localhost:8080/
+          predicates:
+            - Path=/api/v1/users/**
+          filters:
+            - JwtAuthenticationFilter
+        - id: first-service
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/first-service/**
+          filters:
+            - JwtAuthenticationFilter
+        - id: ptsd-short-url
+          uri: http://ec2-13-124-14-52.ap-northeast-2.compute.amazonaws.com
+          predicates:
+            - Path=/api/v1/urls
+          filters:
+            - UrlFilter
+        - id: ptsd-aim-server
+          uri: http://ec2-3-38-135-145.ap-northeast-2.compute.amazonaws.com
+          predicates:
+            - Path=/api/v1/aim/instances/**
+          filters:
+            - AimJwtFilter
+
+AuthURL:
+  url: http://localhost:8080/api/v1/auth/access_token_info
+
+server:
+  port: 8000
