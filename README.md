@@ -24,7 +24,7 @@
 <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> ![jwt 기술스택 이미지](https://github.com/user-attachments/assets/3ccca7b4-3925-4272-b4ed-dfce1fc8826e) <img src="https://img.shields.io/badge/Oauth-EB5424?style=for-the-badge&logo=auth0&logoColor=white">
 
 ###  DATABASE
-<img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"> <img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white"> <img src="https://img.shields.io/badge/mongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white">
+<img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"> <img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white"> <img src="https://img.shields.io/badge/mongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white"> <img src="https://img.shields.io/badge/redis-FF4438?style=for-the-badge&logo=redis&logoColor=white">
 
 ### FRONTEND
 <img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=black"> <img src="https://img.shields.io/badge/redux persist-764ABC?style=for-the-badge&logo=redux&logoColor=black"> </br>
@@ -136,14 +136,7 @@
 ---
 
 # 시스템 아키텍처
-
-+ #### 서비스 아키텍처
 <img src="https://github.com/user-attachments/assets/0d24a701-46d2-427b-93a3-3f2758285010" width="500" height="300"/>
-</br>
-</br>
-
-+ #### 인증 흐름
-<img src="https://github.com/user-attachments/assets/b4e3490d-71c7-453b-ac84-8342a490fea5" width="500" height="300"/>
 </br>
 </br>
 
@@ -168,6 +161,23 @@
 
 + ### MSA
   + 저희 서비스의 구조는 여러 개의 작은 서비스로 구성되어 각 서비스가 독립적으로 개발되고 배포되는 구조인 MSA 아키텍처를 사용하였습니다.외부로터 들어온 요청은  API 게이트웨이를 통해 내부 서비스로 라우팅해줍니다.
+  ![게이트웨이](https://github.com/user-attachments/assets/b17fb532-a003-4206-b5fe-5fed91b9af63)
+
+  </br>
+  
+  + API Gateway로 SCG(Spring Cloud Gatweay)를 사용하였습니다. POC를 만드는 과정에서 각 서비스마다 공통적으로 들어가있는 인증/인가로 인해 서비스내 불필요한 중복요청이 생겼습니다. 이러한 중복요청을 간소화 해주는 기능을 찾던 중 스프링 클라우드 게이트 웨이의 predicate와 filte가 저희 서비스에 적합하다 생각하여 도입하게되었습니다. Gateway를 통해 들어온 클라이언트의 요청이 어떤 서비스로 전달될지 결정하고 해당 토큰이 유효한지, 검증 후 서비스로 요청을 전달합니다.
+    
+  </br>
+  
+  + 인증이 필요하지 않은 API 요청의 경우 인증 처리가 필요하지 않도록, 별도의 처리가 필요한 특정 API의 경우는 각 상황에 맞추어 만들어 적용하는 방식으로 구현을 하였습니다.
+  ![SCG 흐름](https://github.com/user-attachments/assets/839037ea-55b6-46c1-b5a1-6f81e60ab0e7)
+
++ ### 인증 흐름
+  ![인증흐름](https://github.com/user-attachments/assets/b4e3490d-71c7-453b-ac84-8342a490fea5)
+</br>
+</br>
+
+  
 		
 		
 
