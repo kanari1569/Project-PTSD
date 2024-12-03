@@ -5,6 +5,10 @@
 #### 기간/인원
      기간 : 23.08.31 ~ 23.11.09
      인원 : 5명
+#### 맡은 역할
+     소셜 로그인 / 회원가입, 인증 구현
+     API Gateway 구현
+     Infra 구축
 ---
 # 프로젝트 개요
 
@@ -135,23 +139,8 @@
 
 ---
 
-# 시스템 아키텍처
+# 서비스 아키텍처
 <img src="https://github.com/user-attachments/assets/0d24a701-46d2-427b-93a3-3f2758285010" width="500" height="300"/>
-</br>
-</br>
-
-+ #### 도커 스웜 아키텍처 1
-<img src="https://github.com/user-attachments/assets/a3aef4ac-b9a4-4204-9d5e-c2ab3eaa165c" width="500" height="300"/>
-</br>
-</br>
-
-+ #### 도커 스웜 아키텍처 2
-<img src="https://github.com/user-attachments/assets/432249a9-1ec0-48b8-a84d-e2250656d238" width="500" height="300"/>
-</br>
-</br>
-
-+ #### 깃허브 액션 플로우
-<img src="https://github.com/user-attachments/assets/733d8e76-1788-420a-8ba0-ff027f8507e8" width="500" height="300"/>
 </br>
 </br>
 
@@ -165,7 +154,7 @@
 
   </br>
   
-  + API Gateway로 SCG(Spring Cloud Gatweay)를 사용하였습니다. POC를 만드는 과정에서 각 서비스마다 공통적으로 들어가있는 인증/인가로 인해 서비스내 불필요한 중복요청이 생겼습니다. 이러한 중복요청을 간소화 해주는 기능을 찾던 중 스프링 클라우드 게이트 웨이의 predicate와 filte가 저희 서비스에 적합하다 생각하여 도입하게되었습니다. Gateway를 통해 들어온 클라이언트의 요청이 어떤 서비스로 전달될지 결정하고 해당 토큰이 유효한지, 검증 후 서비스로 요청을 전달합니다.
+  + API Gateway로 SCG(Spring Cloud Gatweay)를 사용하였습니다. Gateway를 통해 들어온 클라이언트의 요청이 어떤 서비스로 전달될지 결정하고 해당 토큰이 유효한지, 검증 후 서비스로 요청을 전달합니다.
     
   </br>
   
@@ -176,6 +165,48 @@
   ![인증흐름](https://github.com/user-attachments/assets/b4e3490d-71c7-453b-ac84-8342a490fea5)
 </br>
 </br>
+
++ ### Docker Swarm 아키텍처
+  
+  </br>
+  
+  + #### 아키텍처 1
+    + AWS의 EC2를 서버로 사용하고있으며 각 인스턴스들은 Docker swarm network로 연결되어 통신되고있는 구조입니다. docker swarm은 여러개의 ec2 인스턴스를 클러스터로 형성하여 컨테이너를 배포 및 스케일링 할 수 있도록해줍니다.
+    + EC2 Instance들은 오토 스케일링 그룹에 포함되어 평균 CPU 사용률에 따라 스케일 아웃됩니다. 외부로 부터 들어오는 요청은 ELB를 통해 내부 Ec2 Instance에 로드 밸런싱됩니다.
+  
+  ![도커스웜1](https://github.com/user-attachments/assets/a3aef4ac-b9a4-4204-9d5e-c2ab3eaa165c)
+  
+  </br>
+
+  + #### 아키텍처 2
+    + Ec2 Instance들은 Worker Node로 사용이되는데 이를 관리하기 위해 별도의 Manager Node를 두었습니다. Mnager Node와 Worker node들은 docker swarm netwrk로 연결되어있고 각 서비스들이 배포되어있습니다.
+    + worker node가 스케일 아웃되면 해당 node에 서비스를 배포해줘야하는데 해당 기능을 수행하기 위해 node manager service를 도입하였습니다.
+  
+  ![도커스웜2](https://github.com/user-attachments/assets/432249a9-1ec0-48b8-a84d-e2250656d238)
+  
+  </br>
+
++ ### 무중단 배포
+  + 서비스들의 버전관리가 이루어져야 하는데 일일히 수동으로 하기에는 어려움이 있다고 생각하여 node 내부에서 동작하고 있는 서비스의 버전을 무중단 배포하기 위해 rolling update 기능을 추가했습니다.
+ 
+  </br>
+
+  ![깃액션플로우](https://github.com/user-attachments/assets/733d8e76-1788-420a-8ba0-ff027f8507e8)
+
+---
+
+# 회고 및 마무리
+
++ 카카오 클라우드 스쿨에서 지원하는 krampoline을 단축 URL 서비스에 활용하고자 하였으나, 크램폴린을 활용해 배포하지 못해 아쉬움이 남는다. 그래서 기회가 된다면 쿠버네티스를 활용해 서비스를 구축해보고 싶다. 또한 현재 단축 URL 서비스의 DB는 Document형태로 저장하는 Mongodb를 사용하고 있는데, DB또한 Document형식이 아닌 key-value 형태의 DB를 활용해 DB 서버를 구축하고 싶다.
+
+</br>
+
++ AWS에서 제공하는 다양한 서비스를 사용해 볼 수 있는 좋은 시간이였고, 개인적 성장과 함께 협업능력을 기를 수 있었다. 공유자원 사용, 보안, 디자인 등 기술적으로 보완해야할 부분이 아직 남아있는 프로젝트 이기 때문에 기회가 된다면 리팩토링을 통해 개선해 나가고 싶다.
+
+</br>
+
++ 웹 페이지 서비스 개발을 맡으면서 UX 디자인을 생각을 디테일하게 잡으면서 개발을 못한게 아쉬웠고, 페이지도 서비스에 맞게 디자인 하거나 반응형 페이지를 제작 못한게 아쉬워 앞으로는 UX/UI를 고려하면서 제작해야겠다는 생각이 들었고, 리액트라는 프레임워크를 사용하는데에 있어 리덕스로 상태관리를 못한것도 한편으로 아쉬웠다. 이번 프로젝트를 회고하면서 코드를 리팩토링하여 재사용하거나 세분화를 하는 과정으로 단점을 보완해보고 싶다.
+
 
   
 		
