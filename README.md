@@ -6,34 +6,51 @@
      기간 : 23.08.31 ~ 23.11.09
      인원 : 5명
 ---
+# 프로젝트 개요
 
-## 1.기획 배경
-영상을 저장하고, 친구들과 공유할 수 있는 개인 서버를 갖고 싶지만 서버를 구축하는데 어려움이 있는 사용자를 대상으로 미디어 서버를 제공해주는 플랫폼을 만들기로 결정
-
-##  BACKEND
-<img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"> <img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> ![jwt 기술스택 이미지](https://github.com/user-attachments/assets/3ccca7b4-3925-4272-b4ed-dfce1fc8826e)
-
-##  DATABASE
-<img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"> <img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white">
-
-## FRONTEND
-<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-
-## INFRA
-<img src="https://img.shields.io/badge/aws-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white"> <img src="https://img.shields.io/badge/EC2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white"> <img src="https://img.shields.io/badge/GitAction-181717?style=for-the-badge&logo=github&logoColor=white"> 
-
-## IDE
-<img src="https://img.shields.io/badge/Intellijidea-000000?style=for-the-badge&logo=intellijidea&logoColor=white">
-
-## TOOL
-<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/gitkraken-179287?style=for-the-badge&logo=gitkraken&logoColor=white"> <img src="https://img.shields.io/badge/jira-0052CC?style=for-the-badge&logo=jira&logoColor=white">
++ ## 프로젝트명
+     구독형 개인 미디어 서버 제공 플랫폼과 단축 URL 서비스를 통한 영상 공유
++ ## 기획 배경
+     영상을 저장하고, 친구들과 공유할 수 있는 개인 서버를 갖고 싶지만 서버를 구축하는데 어려움이 있는 사용자를 대상으로 미디어 서버를 제공해주는 플랫폼을 만들기로 결정
++ ## 수행 목표
+     사용자로부터 구독 요청이 들어오면 AWS로부터 EC2와 S3를 생성하여 미디어 서버를 생성해준다. 미디어 서버는 영상 업로드와 스트리밍 기능 및 동영상 공유 서비스를 제공합니다.
 
 ---
-## 1. 기획배경
-+ 카카오 클라우드 스쿨에 등교하며 점심 식사와 함께할 인원에 대한 고민을 하는 클래스 메이트들의 모습을 짧지않은 시간 보아왔습니다. 클래스 메이트들에게 보다 편리하게 점심 식사 스케쥴을 세울 기회를 제공함과 동시에, 미니 프로젝트지만 실사용 가치가 있는 웹 서비스를 구현하고자 하는 희망에 “오늘 점심 뭐먹지?” → 오점뭐? 를 기획하게 되었습니다.
 
+# 개발 환경
   
-+ 본 프로젝트는 2주라는 짧은 개발 기간 동안 협업으로 이루어지는 프로젝트로, 프로젝트 규모를 작게 해 기획부터 개발, 운영, 그리고 유지 보수까지 일반적인 프로젝트에서 이루어지는 과정을 모두 경험하는 것을 목표로 하고 있습니다.
+###  BACKEND
+<img src="https://img.shields.io/badge/springboot-6DB33F?style=for-the-badge&logo=springboot&logoColor=white"> <img src="https://img.shields.io/badge/spring cloud gateway-6DB33F?style=for-the-badge&logo=spring&logoColor=white"> <img src="https://img.shields.io/badge/springsecurity-6DB33F?style=for-the-badge&logo=springsecurity&logoColor=white"> </br> 
+<img src="https://img.shields.io/badge/java-007396?style=for-the-badge&logo=java&logoColor=white"> ![jwt 기술스택 이미지](https://github.com/user-attachments/assets/3ccca7b4-3925-4272-b4ed-dfce1fc8826e) <img src="https://img.shields.io/badge/Oauth-EB5424?style=for-the-badge&logo=auth0&logoColor=white">
+
+###  DATABASE
+<img src="https://img.shields.io/badge/mysql-4479A1?style=for-the-badge&logo=mysql&logoColor=white"> <img src="https://img.shields.io/badge/mariaDB-003545?style=for-the-badge&logo=mariaDB&logoColor=white"> <img src="https://img.shields.io/badge/mongoDB-47A248?style=for-the-badge&logo=MongoDB&logoColor=white">
+
+### FRONTEND
+<img src="https://img.shields.io/badge/react-61DAFB?style=for-the-badge&logo=react&logoColor=black"> <img src="https://img.shields.io/badge/redux-764ABC?style=for-the-badge&logo=redux&logoColor=black"> <img src="https://img.shields.io/badge/redux persist-764ABC?style=for-the-badge&logo=redux&logoColor=black"> </br>
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white"> <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white"> <img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+
+### INFRA
+<img src="https://img.shields.io/badge/aws-232F3E?style=for-the-badge&logo=amazonwebservices&logoColor=white"> <img src="https://img.shields.io/badge/aws s3-569A31?style=for-the-badge&logo=amazons3&logoColor=white"> <img src="https://img.shields.io/badge/EC2-FF9900?style=for-the-badge&logo=amazonec2&logoColor=white"> <img src="https://img.shields.io/badge/GitAction-181717?style=for-the-badge&logo=github&logoColor=white"> </br>
+<img src="https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white"> <img src="https://img.shields.io/badge/docker swarm-2496ED?style=for-the-badge&logo=docker&logoColor=white"> <img src="https://img.shields.io/badge/docker hub-2496ED?style=for-the-badge&logo=docker&logoColor=white">
+
+### IDE
+<img src="https://img.shields.io/badge/Intellijidea-000000?style=for-the-badge&logo=intellijidea&logoColor=white"> <img src="https://img.shields.io/badge/Visual Studio-5C2D91?style=for-the-badge&logo==Visual Studio&logoColor=white"/>
+
+### TOOL
+<img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/jira-0052CC?style=for-the-badge&logo=jira&logoColor=white">
+
+---
+# 화면 구성
+
+  + 메인화면
+    + subscribe 버튼 클릭 시 subscribe 페이지로 이동
+    + PTSD 버튼 클릭 시 초기화면으로 이동
+    + login 버튼 클릭 시 login Modal 팝업
+    </br>
+    <img src="https://github.com/user-attachments/assets/43aab1b0-2881-4ef6-9463-6df79e556c1c" width="300" height="400"/>
+
+
 
 <img src="https://github.com/user-attachments/assets/6a03b052-0aba-481c-9343-906fe0ef4399" align="right">
 
