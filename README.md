@@ -45,57 +45,6 @@
 <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white"> <img src="https://img.shields.io/badge/git-F05032?style=for-the-badge&logo=git&logoColor=white"> <img src="https://img.shields.io/badge/jira-0052CC?style=for-the-badge&logo=jira&logoColor=white">
 
 ---
-# 화면 구성
-
-  + 메인 화면
-    </br>
-    </br>
-    <img src="https://github.com/user-attachments/assets/43aab1b0-2881-4ef6-9463-6df79e556c1c" width="500" height="600"/>
-    </br>
-    </br>
-  + 로그인 화면
-    </br>
-    
-    + 사용자는 Google, KAKAO 두 가지 플랫폼으로 소셜 로그인이 가능합니다.
-    </br>
-    </br>
-    <img src="https://github.com/user-attachments/assets/35ef0095-abae-4c7f-bf9a-b9a1abfdbe26" width="800" height="400"/>
-    </br>
-    </br>
-  + 구독 화면
-    </br>
-    </br>
-    <img src="https://github.com/user-attachments/assets/ca4cf137-2fea-4713-b705-e6ee35351737" width="500" height="600"/>
-    </br>
-    </br>
-  + 할당된 서버 화면
-    </br>
-    
-    + 사용자는 해당 페이지에서 동영상 업로드, 다운 서비스를 제공받습니다.
-    </br>
-    </br>
-    <img src="https://github.com/user-attachments/assets/fad13936-da0a-4c5e-98a3-4f7087b048e5" width="800" height="400"/>
-    </br>
-    </br>
-  + 미디어 재생 페이지
-    </br>
-    
-    + 사용자는 해당 페이지에서 Short URL을 통해 동영상 공유 링크 서비스를 제공받습니다.
-    </br>
-    </br>
-    <img src="https://github.com/user-attachments/assets/de93371b-5209-436b-8b74-f6b1bf9e48e2" width="800" height="400"/>
-    </br>
-    </br>
-  + 마이페이지
-    </br>
-    
-    + 해당 페이지에서 사용자의 정보변경이 가능합니다.
-    </br>
-    </br>
-    <img src="https://github.com/user-attachments/assets/a3083247-f858-4d2b-ba18-28dfaeb321c5" width="800" height="400"/>
-    </br>
-    </br>
----
 
 # DATABASE 
 
@@ -196,6 +145,59 @@
   </br>
 
   ![깃액션플로우](https://github.com/user-attachments/assets/733d8e76-1788-420a-8ba0-ff027f8507e8)
+
+---
+
+# 화면 구성
+
+  + 메인 화면
+    </br>
+    </br>
+    <img src="https://github.com/user-attachments/assets/43aab1b0-2881-4ef6-9463-6df79e556c1c" width="500" height="600"/>
+    </br>
+    </br>
+  + 로그인 화면
+    </br>
+    
+    + 사용자는 Google, KAKAO 두 가지 플랫폼으로 소셜 로그인이 가능합니다.
+    </br>
+    </br>
+    <img src="https://github.com/user-attachments/assets/35ef0095-abae-4c7f-bf9a-b9a1abfdbe26" width="800" height="400"/>
+    </br>
+    </br>
+  + 구독 화면
+    </br>
+    </br>
+    <img src="https://github.com/user-attachments/assets/ca4cf137-2fea-4713-b705-e6ee35351737" width="500" height="600"/>
+    </br>
+    </br>
+  + 할당된 서버 화면
+    </br>
+    
+    + 사용자는 해당 페이지에서 동영상 업로드, 다운 서비스를 제공받습니다.
+    </br>
+    </br>
+    <img src="https://github.com/user-attachments/assets/fad13936-da0a-4c5e-98a3-4f7087b048e5" width="800" height="400"/>
+    </br>
+    </br>
+  + 미디어 재생 페이지
+    </br>
+    
+    + 사용자는 해당 페이지에서 Short URL을 통해 동영상 공유 링크 서비스를 제공받습니다.
+    </br>
+    </br>
+    <img src="https://github.com/user-attachments/assets/de93371b-5209-436b-8b74-f6b1bf9e48e2" width="800" height="400"/>
+    </br>
+    </br>
+  + 마이페이지
+    </br>
+    
+    + 해당 페이지에서 사용자의 정보변경이 가능합니다.
+    </br>
+    </br>
+    <img src="https://github.com/user-attachments/assets/a3083247-f858-4d2b-ba18-28dfaeb321c5" width="800" height="400"/>
+    </br>
+    </br>
 
 ---
 
