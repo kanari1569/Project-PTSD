@@ -123,8 +123,8 @@
   </br>
   
   + #### 아키텍처 1
-    + AWS의 EC2를 서버로 사용하고있으며 각 인스턴스들은 Docker swarm network로 연결되어 통신되고있는 구조입니다. docker swarm은 여러개의 ec2 인스턴스를 클러스터로 형성하여 컨테이너를 배포 및 스케일링 할 수 있도록해줍니다.
-    + EC2 Instance들은 오토 스케일링 그룹에 포함되어 평균 CPU 사용률에 따라 스케일 아웃됩니다. 외부로 부터 들어오는 요청은 ELB를 통해 내부 Ec2 Instance에 로드 밸런싱됩니다.
+    + AWS의 EC2를 서버로 사용하고있으며 각 인스턴스들은 Docker swarm network로 연결되어 통신되고있는 구조입니다.
+    + EC2 Instance들은 오토 스케일링 그룹에 포함되어 평균 CPU 사용률에 따라 스케일 아웃됩니다.
   
   ![도커스웜1](https://github.com/user-attachments/assets/a3aef4ac-b9a4-4204-9d5e-c2ab3eaa165c)
   
@@ -132,8 +132,6 @@
 
   + #### 아키텍처 2
     + Ec2 Instance들은 Worker Node로 사용이되는데 이를 관리하기 위해 별도의 Manager Node를 두었습니다.
-    +  Mnager Node와 Worker node들은 docker swarm netwrk로 연결되어있고 각 서비스들이 배포되어있습니다.
-    + worker node가 스케일 아웃되면 해당 node에 서비스를 배포해줘야하는데 해당 기능을 수행하기 위해 node manager service를 도입하였습니다.
   
   ![도커스웜2](https://github.com/user-attachments/assets/432249a9-1ec0-48b8-a84d-e2250656d238)
   
